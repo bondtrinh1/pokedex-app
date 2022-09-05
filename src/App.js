@@ -14,7 +14,7 @@ function App() {
         <Route path="/pokemon/:id" element={<PokemonDetails/>} />
       </Routes>
     </Box>
-  )
+  );
 }
 
 export default App;

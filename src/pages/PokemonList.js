@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { 
@@ -21,6 +21,10 @@ function PokemonList() {
     return data;
   };
 
+  useEffect(() => {
+    document.title = "Pokemons / My Pokedex";
+  });
+
   const getPokemonByURL = async (url) => {
     const { data } = await axios.get(url);
     return data;
@@ -32,7 +36,7 @@ function PokemonList() {
       );
     
       if (error) {
-        return <Alert severity="error">{error.message}</Alert>;
+        return <Alert severity="error">{error.message}</Alert>
       }
     
       if (isFetching) {

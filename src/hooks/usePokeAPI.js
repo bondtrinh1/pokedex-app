@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
 
 const ACTIONS = {
@@ -42,12 +42,12 @@ const fetchReducer = (state, action) => {
 };
 
 export const usePokeAPI = (endpoint, initialState = {}, config = {}) => {
-    const[state, dispatch] = React.useReducer(
+    const[state, dispatch] = useReducer(
         fetchReducer,
         createInitialState(initialState)
     );
 
-    React.useEffect(() => {
+    useEffect(() => {
         const fetchData = async () => {
             dispatch({ type: ACTIONS.fetchRequest });
 

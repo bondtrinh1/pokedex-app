@@ -38,9 +38,13 @@ function PokemonDetails(name) {
     };
 
     useEffect(() => {
-        getPokemon(id)
+        getPokemon(id);
     }, [id]);
-
+   
+    useEffect(() => {
+        document.title = pokemonDetails.name.charAt(0).toUpperCase() + pokemonDetails.name.substring(1).toLowerCase() + " / My Pokedex";
+    });
+    
     return (
     <Box sx={{ display: "flex", flexFlow: "column" }}>
         <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
@@ -53,7 +57,7 @@ function PokemonDetails(name) {
                             sx={{ 
                             flex: 1, 
                             textAlign: "center", 
-                            textTransform: "capitalize",
+                            textTransform: "capitalize"
                         }}>
                             {pokemonDetails.name}
                         </Typography>

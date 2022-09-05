@@ -42,7 +42,7 @@ const fetchReducer = (state, action) => {
 };
 
 export const usePokeAPI = (endpoint, initialState = {}, config = {}) => {
-    const[state, dispatch] = useReducer(
+    const [state, dispatch] = useReducer(
         fetchReducer,
         createInitialState(initialState)
     );

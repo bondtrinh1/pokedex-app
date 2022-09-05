@@ -17,18 +17,18 @@ const createInitialState = (initialState) => ({
 const fetchReducer = (state, action) => {
     const { type, payload } = action;
 
-    switch(type) {
-        case ACTIONS.fetchSuccess: 
-            return {
-                ...state, 
-                payload, 
-                isFetching: false
-            };
+    switch (type) {
         case ACTIONS.fetchRequest:
             return {
                 ...state, 
                 isFetching: true, 
                 error: undefined
+            };
+        case ACTIONS.fetchSuccess: 
+            return {
+                ...state, 
+                payload, 
+                isFetching: false
             };
         case ACTIONS.fetchFailure:
             return {

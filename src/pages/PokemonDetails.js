@@ -47,7 +47,10 @@ function PokemonDetails(name) {
             <Box sx={{ my: 3, mx: 2 }}>
                 <Grid container alignItems="center">
                     <Grid item xs>
-                        <Typography variant="h1" component="div" sx={{ 
+                        <Typography 
+                            variant="h1" 
+                            component="div" 
+                            sx={{ 
                             flex: 1, 
                             textAlign: "center", 
                             textTransform: "capitalize",
@@ -62,7 +65,7 @@ function PokemonDetails(name) {
                 <Typography gutterBottom variant="h4">
                     Types
                 </Typography>
-                <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+                <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
                     {isFetching && pokemonDetails?.types.map((types, index) => (
                         <Stack direction="row" spacing={1} key={index}>
                             <Chip color="primary" label={types.type.name} sx={{ textTransform: "capitalize" }} /> 

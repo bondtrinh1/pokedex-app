@@ -40,7 +40,7 @@ function PokemonList() {
           <Box sx={{ 
             position: "absolute", 
             top: "50%", 
-            left: "50%" 
+            left: "50%"
           }}>
             <CircularProgress />
           </Box>
@@ -63,7 +63,7 @@ function PokemonList() {
             <CardContent>
               <Typography sx={{
                 textTransform: "capitalize",
-                textAlign: "center",
+                textAlign: "center"
               }}>
                 {name}
               </Typography>
@@ -84,7 +84,7 @@ function PokemonList() {
       <Box sx={{ 
         position: "absolute", 
         top: "50%", 
-        left: "50%" 
+        left: "50%"
       }}>
         <CircularProgress />
       </Box>
@@ -100,7 +100,7 @@ function PokemonList() {
         display:"flex", 
         justifyContent:"center", 
         flexWrap: "wrap", 
-        padding: 1,
+        padding: 1
       }}>
         {pokemons?.map((pokemon, index) => (
           <Grid item key={index}>

@@ -20,7 +20,7 @@ function PokemonDetails(name) {
         "types": [
             {
                 "type": {
-                    "name": "",
+                    "name": ""
                 }
             }
         ]
@@ -43,7 +43,7 @@ function PokemonDetails(name) {
 
     return (
     <Box sx={{ display: "flex", flexFlow: "column" }}>
-        <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+        <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
             <Box sx={{ my: 3, mx: 2 }}>
                 <Grid container alignItems="center">
                     <Grid item xs>

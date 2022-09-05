@@ -4,14 +4,14 @@ import axios from "axios";
 const ACTIONS = {
     fetchRequest: "FETCH_REQUEST",
     fetchSuccess: "FETCH_SUCCESS",
-    fetchFailure: "FETCH_FAILURE",
+    fetchFailure: "FETCH_FAILURE"
 };
 
 const createInitialState = (initialState) => ({
     data: undefined,
     isFetching: true,
     error: undefined,
-    ...initialState,
+    ...initialState
 });
 
 const fetchReducer = (state, action) => {
@@ -22,19 +22,19 @@ const fetchReducer = (state, action) => {
             return {
                 ...state, 
                 payload, 
-                isFetching: false,
+                isFetching: false
             };
         case ACTIONS.fetchRequest:
             return {
                 ...state, 
                 isFetching: true, 
-                error: undefined,
+                error: undefined
             };
         case ACTIONS.fetchFailure:
             return {
                 ...state, 
                 payload, 
-                isFetching: false,
+                isFetching: false
             };
         default:
             throw new Error();

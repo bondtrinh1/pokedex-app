@@ -16,7 +16,7 @@ function Appbar() {
             component="div" 
             sx={{ 
               flexGrow: 1, 
-              fontWeight: 700, 
+              fontWeight: 700
             }}>
               My Pokedex
           </Typography>

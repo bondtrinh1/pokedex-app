@@ -13,10 +13,7 @@ function Appbar() {
           <Typography 
             variant="h4" 
             component="div" 
-            sx={{ 
-              flexGrow: 1, 
-              fontWeight: 700
-            }}>
+            sx={{ fontWeight: 700 }}>
               My Pokedex
           </Typography>
         </Toolbar>

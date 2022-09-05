@@ -9,6 +9,7 @@ import {
     Divider
 } from "@mui/material";
 import axios from "axios";
+import "../styles/PokemonDetails.css";
 
 function PokemonDetails(name) {
     const [isFetching, setIsFetching] = useState(false);
@@ -46,12 +47,13 @@ function PokemonDetails(name) {
     });
     
     return (
-    <Box sx={{ display: "flex", flexFlow: "column" }}>
+    <Box id="box" sx={{ display: "flex", flexFlow: "column" }}>
         <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
             <Box sx={{ my: 3, mx: 2 }}>
                 <Grid container alignItems="center">
                     <Grid item xs>
                         <Typography 
+                            id="name"
                             variant="h1" 
                             component="div" 
                             sx={{ 

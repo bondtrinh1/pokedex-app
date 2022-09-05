@@ -22,19 +22,19 @@ const fetchReducer = (state, action) => {
             return {
                 ...state, 
                 payload, 
-                isFetching: false
+                isFetching: false,
             };
         case ACTIONS.fetchRequest:
             return {
                 ...state, 
                 isFetching: true, 
-                error: undefined
+                error: undefined,
             };
         case ACTIONS.fetchFailure:
             return {
                 ...state, 
                 payload, 
-                isFetching: false
+                isFetching: false,
             };
         default:
             throw new Error();

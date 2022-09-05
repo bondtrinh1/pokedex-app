@@ -60,7 +60,7 @@ export const usePokeAPI = (endpoint, initialState = {}, config = {}) => {
                     payload: {error: error.message}
                 });
             }
-        }
+        };
 
         fetchData();
     }, [config, endpoint])

@@ -14,7 +14,7 @@ function Appbar() {
             variant="h4" 
             component="div" 
             sx={{ fontWeight: 700 }}>
-              My Pokedex
+              Pokedex
           </Typography>
         </Toolbar>
       </AppBar>

@@ -32,7 +32,10 @@ function PokemonList() {
 
   const PokemonCard = ({ name, url }) => {
       const { error, isFetching, data } = useQuery(`pokemon${name}`, () =>
-        getPokemonByURL(url)
+        getPokemonByURL(url), {
+          refetchOnMount: false,
+          refetchOnWindowFocus: false,
+        }
       );
     
       if (error) {
@@ -77,7 +80,10 @@ function PokemonList() {
       );
   };
 
-  const { error, isFetching, data } = useQuery("pokemons", getPokemons);
+  const { error, isFetching, data } = useQuery("pokemons", getPokemons, {
+    refetchOnMount: false,
+    refetchOnWindowFocus: false
+  });
   
   if (error) {
     return <Alert severity="error">{error.message}</Alert>

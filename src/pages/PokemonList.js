@@ -105,7 +105,7 @@ function PokemonList() {
 
   return (
     <Grid 
-      container spacing={3} 
+      container spacing={2} 
       sx={{
         display:"flex", 
         justifyContent:"center", 

@@ -21,14 +21,14 @@ function PokemonList() {
     return data;
   };
 
-  useEffect(() => {
-    document.title = "Pokemons / My Pokedex";
-  });
-
   const getPokemonByURL = async (url) => {
     const { data } = await axios.get(url);
     return data;
   };
+
+  useEffect(() => {
+    document.title = "Pokemons / My Pokedex";
+  });
 
   const PokemonCard = ({ name, url }) => {
       const { error, isFetching, data } = useQuery(`pokemon${name}`, () =>
@@ -60,7 +60,7 @@ function PokemonList() {
     
       return (
         <Link to={`/pokemon/${name}`} style={{ textDecoration: "none" }}>
-          <Card sx={{ maxWidth: 200 }}>
+          <Card sx={{ padding: 2 }}>
             <CardMedia
               component="img"
               height="120"
@@ -107,10 +107,10 @@ function PokemonList() {
     <Grid 
       container spacing={2} 
       sx={{
-        display:"flex", 
-        justifyContent:"center", 
-        flexWrap: "wrap", 
-        padding: 1
+        padding: 2,
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, 200px)",
+        justifyContent: "center"
       }}>
         {pokemons?.map((pokemon, index) => (
           <Grid item key={index}>

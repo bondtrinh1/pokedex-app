@@ -27,7 +27,7 @@ function PokemonList() {
   };
 
   useEffect(() => {
-    document.title = "Pokemons / My Pokedex";
+    document.title = "Pokémons | Pokédex";
   });
 
   const PokemonCard = ({ name, url }) => {
@@ -48,7 +48,8 @@ function PokemonList() {
             position: "absolute", 
             top: "50%", 
             left: "50%"
-          }}>
+          }}
+          >
             <CircularProgress />
           </Box>
         );
@@ -60,10 +61,9 @@ function PokemonList() {
     
       return (
         <Link to={`/pokemon/${name}`} style={{ textDecoration: "none" }}>
-          <Card sx={{ padding: 2 }}>
+          <Card>
             <CardMedia
               component="img"
-              height="120"
               image={front_default}
               alt={name}
             />
@@ -71,7 +71,8 @@ function PokemonList() {
               <Typography sx={{
                 textTransform: "capitalize",
                 textAlign: "center"
-              }}>
+              }}
+              >
                 {name}
               </Typography>
             </CardContent>
@@ -95,11 +96,12 @@ function PokemonList() {
         position: "absolute", 
         top: "50%", 
         left: "50%"
-      }}>
+      }}
+      >
         <CircularProgress />
       </Box>
     );
-  }
+  };
   
   const { results: pokemons } = data;
 
@@ -107,11 +109,11 @@ function PokemonList() {
     <Grid 
       container spacing={2} 
       sx={{
-        padding: 2,
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, 200px)",
         justifyContent: "center"
-      }}>
+      }}
+      >
         {pokemons?.map((pokemon, index) => (
           <Grid item key={index}>
               <PokemonCard {...pokemon} />

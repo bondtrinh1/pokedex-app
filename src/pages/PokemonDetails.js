@@ -43,7 +43,7 @@ function PokemonDetails(name) {
     }, [id]);
    
     useEffect(() => {
-        document.title = pokemonDetails.name.charAt(0).toUpperCase() + pokemonDetails.name.substring(1).toLowerCase() + " / My Pokedex";
+        document.title = pokemonDetails.name.charAt(0).toUpperCase() + pokemonDetails.name.substring(1).toLowerCase() + " | Pokédex";
     });
     
     return (
@@ -60,7 +60,8 @@ function PokemonDetails(name) {
                             flex: 1, 
                             textAlign: "center", 
                             textTransform: "capitalize"
-                        }}>
+                        }}
+                        >
                             {pokemonDetails.name}
                         </Typography>
                     </Grid>

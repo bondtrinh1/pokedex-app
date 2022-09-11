@@ -111,14 +111,15 @@ function PokemonList() {
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, 200px)",
-        justifyContent: "center"
+        justifyContent: "center",
+        paddingBottom: 3
       }}
-      >
-        {pokemons?.map((pokemon, index) => (
-          <Grid item key={index}>
-              <PokemonCard {...pokemon} />
-          </Grid>
-        ))}
+    >
+      {pokemons?.map((pokemon, index) => (
+        <Grid item key={index}>
+            <PokemonCard {...pokemon} />
+        </Grid>
+      ))}
     </Grid>
   );
 }

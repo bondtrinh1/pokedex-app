@@ -7,7 +7,7 @@ import { Box } from "@mui/system";
 
 function App() {
   return (
-    <Box sx={{ paddingTop: 10 }}>
+    <Box sx={{ paddingTop: 12 }}>
       <Appbar />
       <Routes>
         <Route exact path="/" element={<PokemonList/>} />

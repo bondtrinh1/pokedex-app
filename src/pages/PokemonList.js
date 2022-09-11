@@ -112,7 +112,7 @@ function PokemonList() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, 200px)",
         justifyContent: "center",
-        paddingBottom: 3
+        paddingBottom: 4
       }}
     >
       {pokemons?.map((pokemon, index) => (

@@ -2,68 +2,68 @@ import { useEffect, useReducer } from "react";
 import axios from "axios";
 
 const ACTIONS = {
-    fetchRequest: "FETCH_REQUEST",
-    fetchSuccess: "FETCH_SUCCESS",
-    fetchFailure: "FETCH_FAILURE"
+  fetchRequest: "FETCH_REQUEST",
+  fetchSuccess: "FETCH_SUCCESS",
+  fetchFailure: "FETCH_FAILURE",
 };
 
 const createInitialState = (initialState) => ({
-    data: undefined,
-    isFetching: true,
-    error: undefined,
-    ...initialState
+  data: undefined,
+  isFetching: true,
+  error: undefined,
+  ...initialState,
 });
 
 const fetchReducer = (state, action) => {
-    const { type, payload } = action;
+  const { type, payload } = action;
 
-    switch (type) {
-        case ACTIONS.fetchRequest:
-            return {
-                ...state, 
-                isFetching: true, 
-                error: undefined
-            };
-        case ACTIONS.fetchSuccess: 
-            return {
-                ...state, 
-                payload, 
-                isFetching: false
-            };
-        case ACTIONS.fetchFailure:
-            return {
-                ...state, 
-                payload, 
-                isFetching: false
-            };
-        default:
-            throw new Error();
-    }
+  switch (type) {
+    case ACTIONS.fetchRequest:
+      return {
+        ...state,
+        isFetching: true,
+        error: undefined,
+      };
+    case ACTIONS.fetchSuccess:
+      return {
+        ...state,
+        payload,
+        isFetching: false,
+      };
+    case ACTIONS.fetchFailure:
+      return {
+        ...state,
+        payload,
+        isFetching: false,
+      };
+    default:
+      throw new Error();
+  }
 };
 
 export const usePokeAPI = (endpoint, initialState = {}, config = {}) => {
-    const [state, dispatch] = useReducer(
-        fetchReducer,
-        createInitialState(initialState)
-    );
+  const [state, dispatch] = useReducer(
+    fetchReducer,
+    createInitialState(initialState)
+  );
 
-    useEffect(() => {
-        const fetchData = async () => {
-            dispatch({ type: ACTIONS.fetchRequest });
+  useEffect(() => {
+    const fetchData = async () => {
+      dispatch({ type: ACTIONS.fetchRequest });
 
-            try {
-                const {data} = await axios.get(endpoint, config);
-                dispatch({ type:ACTIONS.fetchSuccess, payload: { data } });
-            } catch(error) {
-                dispatch({
-                    type: ACTIONS.fetchFailure,
-                    payload: {error: error.message}
-                });
-            }
-        };
+      try {
+        const { data } = await axios.get(endpoint, config);
+        dispatch({ type: ACTIONS.fetchSuccess, payload: { data } });
+      } catch (error) {
+        dispatch({
+          type: ACTIONS.fetchFailure,
+          payload: { error: error.message },
+        });
+      }
+    };
 
-        fetchData();
-    }, [config, endpoint])
+    fetchData();
+  }, [config, endpoint]);
 
-    return state;
+  return state;
 };

@@ -10,8 +10,8 @@ function App() {
     <Box sx={{ paddingTop: 12 }}>
       <Appbar />
       <Routes>
-        <Route exact path="/" element={<PokemonList/>} />
-        <Route path="/pokemon/:id" element={<PokemonDetails/>} />
+        <Route exact path="/" element={<PokemonList />} />
+        <Route path="/pokemon/:id" element={<PokemonDetails />} />
       </Routes>
     </Box>
   );

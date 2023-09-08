@@ -1,20 +1,12 @@
 import * as React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography
-} from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 
 function Appbar() {
   return (
     <>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography 
-            variant="h4" 
-            component="div" 
-            sx={{ fontWeight: 700 }}
-          >
+          <Typography variant="h4" component="div" sx={{ fontWeight: 700 }}>
             Pokédex
           </Typography>
         </Toolbar>

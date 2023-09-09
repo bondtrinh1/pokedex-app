@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Typography, Box, Chip, Grid, Stack, Divider } from "@mui/material";
 import axios from "axios";
-import "../styles/PokemonDetails.css";
 
 function PokemonDetails(name) {
   const [isFetching, setIsFetching] = useState(false);

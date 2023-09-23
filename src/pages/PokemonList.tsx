@@ -27,16 +27,19 @@ function PokemonList() {
   });
 
   if (error) {
-    return <Alert severity="error">{error.message}</Alert>;
+    // return <Alert severity="error">{error.message}</Alert>;
+    return <Alert severity="error">Something went wrong...</Alert>;
   }
 
   if (isFetching) {
     return (
       <Box
         sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
+          alignContent: "center",
+          alignItems: "center",
+          display: "flex",
+          height: "100vh",
+          justifyContent: "center",
         }}
       >
         <CircularProgress />

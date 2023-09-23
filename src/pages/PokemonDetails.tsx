@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Typography, Box, Chip, Grid, Stack, Divider } from "@mui/material";
 import axios from "axios";
@@ -47,7 +47,7 @@ function PokemonDetails() {
   });
 
   return (
-    <Box id="box" sx={{ display: "flex", flexFlow: "column" }}>
+    <Box id="box">
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
         <Box sx={{ my: 3, mx: 2 }}>
           <Grid container alignItems="center">

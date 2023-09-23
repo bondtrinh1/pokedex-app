@@ -1,17 +1,13 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
-import {
-  Grid,
-  CircularProgress,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  Alert,
-  Box,
-} from "@mui/material";
+import { Grid, CircularProgress, Alert, Box } from "@mui/material";
+import { PokemonCard } from "../components";
 import axios from "axios";
+
+export const getPokemonByURL = async (url) => {
+  const { data } = await axios.get(url);
+  return data;
+};
 
 function PokemonList() {
   const getPokemons = async () => {
@@ -21,65 +17,9 @@ function PokemonList() {
     return data;
   };
 
-  const getPokemonByURL = async (url) => {
-    const { data } = await axios.get(url);
-    return data;
-  };
-
   useEffect(() => {
     document.title = "Pokémons | Pokédex";
   });
-
-  const PokemonCard = ({ name, url }) => {
-    const { error, isFetching, data } = useQuery(
-      `pokemon${name}`,
-      () => getPokemonByURL(url),
-      {
-        refetchOnMount: false,
-        refetchOnWindowFocus: false,
-      }
-    );
-
-    if (error) {
-      return <Alert severity="error">{error.message}</Alert>;
-    }
-
-    if (isFetching) {
-      return (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-          }}
-        >
-          <CircularProgress />
-        </Box>
-      );
-    }
-
-    const {
-      sprites: { front_default },
-    } = data;
-
-    return (
-      <Link to={`/pokemon/${name}`} style={{ textDecoration: "none" }}>
-        <Card>
-          <CardMedia component="img" image={front_default} alt={name} />
-          <CardContent>
-            <Typography
-              sx={{
-                textTransform: "capitalize",
-                textAlign: "center",
-              }}
-            >
-              {name}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
-    );
-  };
 
   const { error, isFetching, data } = useQuery("pokemons", getPokemons, {
     refetchOnMount: false,
@@ -114,7 +54,8 @@ function PokemonList() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, 200px)",
         justifyContent: "center",
-        paddingBottom: 4,
+        marginTop: 0,
+        paddingBottom: 2,
       }}
     >
       {pokemons?.map((pokemon, index) => (

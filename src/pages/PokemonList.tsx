@@ -2,21 +2,9 @@ import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Grid, CircularProgress, Alert, Box } from "@mui/material";
 import { PokemonCard } from "../components";
-import axios from "axios";
-
-export const getPokemonByURL = async (url) => {
-  const { data } = await axios.get(url);
-  return data;
-};
+import { getPokemons } from "../utils";
 
 function PokemonList() {
-  const getPokemons = async () => {
-    const { data } = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=150"
-    );
-    return data;
-  };
-
   useEffect(() => {
     document.title = "Pokémons | Pokédex";
   });

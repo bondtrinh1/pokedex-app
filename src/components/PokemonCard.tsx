@@ -9,7 +9,7 @@ import {
   Alert,
   Box,
 } from "@mui/material";
-import { getPokemonByURL } from "../pages/PokemonList.tsx";
+import { getPokemonByURL } from "../utils";
 
 const PokemonCard = ({ name, url }) => {
   const { error, isFetching, data } = useQuery(

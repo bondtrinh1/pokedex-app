@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Typography, Box, Chip, Grid, Stack, Divider } from "@mui/material";
 import axios from "axios";
 
-function PokemonDetails(name) {
+function PokemonDetails() {
   const [isFetching, setIsFetching] = useState(false);
   const { id } = useParams();
 
@@ -17,6 +17,9 @@ function PokemonDetails(name) {
         },
       },
     ],
+    sprites: {
+      back_default: "",
+    },
   });
 
   const getPokemon = async (id) => {

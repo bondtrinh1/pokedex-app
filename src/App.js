@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import PokemonDetails from "./pages/PokemonDetails";
-import PokemonList from "./pages/PokemonList";
+import { PokemonDetails, PokemonList } from "./pages";
 import Appbar from "./components/Appbar";
 import { Box } from "@mui/system";
 

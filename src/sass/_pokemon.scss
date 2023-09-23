@@ -1,9 +1,10 @@
 #box {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-flow: column;
   height: 100vh;
+  justify-content: center;
 }
 
 @media screen and (max-width: 400px) {

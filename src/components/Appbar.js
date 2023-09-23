@@ -5,7 +5,14 @@ function Appbar() {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <Link
+          to="/"
+          style={{
+            color: "inherit",
+            textDecoration: "none",
+            userSelect: "none",
+          }}
+        >
           <Typography variant="h4" component="div" sx={{ fontWeight: 700 }}>
             Pokédex
           </Typography>
